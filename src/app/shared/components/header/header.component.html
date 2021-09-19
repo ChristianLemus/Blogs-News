@@ -1,1 +1,59 @@
-<button class="btn">Hola</button>
+<header class="header-container">
+	<div class="header-content">
+		<!-- logo -->
+		<div class="text-gray-100 text-lg font-semibold">
+			<a
+				routerLink="/main"
+				routerLinkActive="active"
+				class="flex items-center py-4 px-2"
+			>
+				<img
+					src="./assets/images/markin-apps-logo.png"
+					alt="Logo"
+					class="h-10 w-10 mr-8"
+				/>
+				<span class="hover:text-black">Blogs & News</span>
+			</a>
+		</div>
+		<!-- Navigation items -->
+		<div class="flex items-center">
+			<nav class="nav-container">
+				<a
+					routerLink="/main"
+					routerLinkActive="active"
+					class="nav-item font-medium text-black"
+				>
+					Inicio
+				</a>
+				<a
+					routerLink="/contact"
+					routerLinkActive="active"
+					class="nav-item"
+				>
+					Contacto
+				</a>
+				<a
+					routerLink="about"
+					routerLinkActive="active"
+					class="nav-item"
+				>
+					Acerca de
+				</a>
+				<button
+					routerLink="login"
+					routerLinkActive="active"
+					type="button"
+					class="btn-login"
+				>
+					Iniciar Sesión
+				</button>
+			</nav>
+			<!-- button style for small devices -->
+			<button class="lg:hidden flex flex-col ml-4">
+				<span class="w-6 h-1 bg-gray-100 mb-1"> </span>
+				<span class="w-6 h-1 bg-gray-100 mb-1"> </span>
+				<span class="w-6 h-1 bg-gray-100 mb-1"> </span>
+			</button>
+		</div>
+	</div>
+</header>
