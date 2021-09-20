@@ -7,7 +7,11 @@ import { AboutComponent } from "./components/about/about.component";
 import { LoginComponent } from "./components/login/login.component";
 
 const routes: Routes = [
-  { path: "login", component: LoginComponent },
+  {
+    path: "login",
+    component: LoginComponent,
+    children: [{ path: "", component: LoginComponent }],
+  },
   { path: "main", component: MainComponent },
   { path: "contact", component: ContactComponent },
   { path: "about", component: AboutComponent },

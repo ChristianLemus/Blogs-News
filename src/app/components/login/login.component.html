@@ -36,7 +36,11 @@
 					Ingresa a Blogs & News
 				</div>
 				<div class="mt-8">
-					<form action="#" autoComplete="off">
+					<form
+						[formGroup]="loginForm"
+						(ngSubmit)="onLogin(loginForm)"
+						autoComplete="off"
+					>
 						<div class="flex flex-col mb-2">
 							<div class="flex relative">
 								<span
@@ -66,6 +70,7 @@
 									</svg>
 								</span>
 								<input
+									formControlName="username"
 									type="text"
 									id="sign-in-email"
 									class="
@@ -87,6 +92,7 @@
 										focus:border-transparent
 									"
 									placeholder="Correo electrónico"
+									required
 								/>
 							</div>
 						</div>
@@ -119,6 +125,7 @@
 									</svg>
 								</span>
 								<input
+									formControlName="password"
 									type="password"
 									id="sign-in-email"
 									class="
@@ -140,6 +147,7 @@
 										focus:border-transparent
 									"
 									placeholder="Contraseña"
+									required
 								/>
 							</div>
 						</div>
