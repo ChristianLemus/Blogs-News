@@ -1,12 +1,12 @@
 <div class="bg-white flex relative z-20 items-center">
 	<div class="container mx-auto px-6 block relative py-16 md:block lg:flex">
-		<div class="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
+		<div class="block 3/3 lg:w-3/6 relative">
 			<img
 				src="./assets/images/img-main-page.svg"
-				class="max-w-lg md:max-w-lg m-auto"
+				class="max-w-sm md:max-w-lg m-0"
 			/>
 		</div>
-		<div class="ml-0 w-1/3 md:ml-20 lg:w-2/5 flex flex-col relative z-20">
+		<div class="block w-3/3 lg:w-3/6 flex flex-col relative z-20">
 			<div
 				class="
 					flex flex-col
@@ -14,25 +14,26 @@
 					max-w-md
 					px-4
 					py-8
+					ml-0
 					bg-white
 					rounded-lg
 					shadow
 					sm:px-6
 					md:px-8
-					lg:px-10
+					lg:px-10 lg:ml-24
 				"
 			>
 				<div
 					class="
 						self-center
 						mb-6
-						text-xl
-						font-light
-						text-gray-600
-						sm:text-2xl
+						text-md
+						font-semibold
+						text-primary
+						lg:text-lg
 					"
 				>
-					Login To Your Account
+					Ingresa a Blogs & News
 				</div>
 				<div class="mt-8">
 					<form action="#" autoComplete="off">
@@ -82,10 +83,10 @@
 										text-base
 										focus:outline-none
 										focus:ring-2
-										focus:ring-purple-600
+										focus:ring-primary
 										focus:border-transparent
 									"
-									placeholder="Your email"
+									placeholder="Correo electrónico"
 								/>
 							</div>
 						</div>
@@ -135,10 +136,10 @@
 										text-base
 										focus:outline-none
 										focus:ring-2
-										focus:ring-purple-600
+										focus:ring-primary
 										focus:border-transparent
 									"
-									placeholder="Your password"
+									placeholder="Contraseña"
 								/>
 							</div>
 						</div>
@@ -148,14 +149,12 @@
 									href="#"
 									class="
 										inline-flex
-										text-xs
-										font-thin
-										text-gray-500
+										text-xs text-gray-300
 										sm:text-sm
-										hover:text-gray-700
+										hover:text-black
 									"
 								>
-									Forgot Your Password?
+									¿Olvidaste tu contraseña?
 								</a>
 							</div>
 						</div>
@@ -165,8 +164,8 @@
 								class="
 									py-2
 									px-4
-									bg-purple-600
-									hover:bg-purple-700
+									bg-primary
+									hover:bg-primary_hover
 									focus:ring-purple-500
 									focus:ring-offset-purple-200
 									text-white
@@ -174,16 +173,16 @@
 									transition
 									ease-in
 									duration-200
-									text-center text-base
+									text-center
 									font-semibold
 									shadow-md
 									focus:outline-none
 									focus:ring-2
-									focus:ring-offset-2
-									rounded-lg
+									focus:ring-primary
+									rounded-full
 								"
 							>
-								Login
+								Iniciar Sesión
 							</button>
 						</div>
 					</form>
@@ -195,44 +194,14 @@
 						class="
 							inline-flex
 							items-center
-							text-xs
-							font-thin
-							text-center text-gray-500
-							hover:text-gray-700
+							text-xs text-center text-gray-300
+							hover:text-black
 						"
 					>
-						<span class="ml-2">
-							You don&#x27;t have an account?
-						</span>
+						<span class="ml-2"> ¿No tienes una cuenta? </span>
 					</a>
 				</div>
 			</div>
-			<!-- <span
-				class="
-					w-full
-					mb-4
-					text-primary text-sm
-					font-medium
-					md:text-md md:mb-6
-				"
-			>
-				BLOGS & NEWS</span
-			>
-			<h1
-				class="
-					flex flex-col
-					text-gray-100 text-3xl
-					md:text-5xl
-					mb-4
-					md:mb-6
-				"
-			>
-				Descubre los Blogs y Noticias que Tenemos Para Ti.
-			</h1>
-			<h2 class="text-sm text-gray-100 md:text-lg">
-				¡Que esperas! No te pierdas la oportunidad de aprovechar al
-				máximo cada uno de nuestros productos.
-			</h2> -->
 		</div>
 	</div>
 </div>
