@@ -18,3 +18,7 @@
     @apply py-2 px-5 bg-primary hover:bg-white hover:text-primary border-2 border-primary text-white transition ease-in
     duration-200 text-center font-medium focus:outline-none rounded-full;
 }
+
+.nav-item-active {
+    @apply font-medium text-black;
+}

@@ -21,7 +21,10 @@
 				<a
 					routerLink="/main"
 					routerLinkActive="active"
-					class="nav-item font-medium text-black"
+					class="nav-item"
+					[class.nav-item-active]="
+						hasRoute('login') || hasRoute('main')
+					"
 				>
 					Inicio
 				</a>
@@ -29,6 +32,7 @@
 					routerLink="/contact"
 					routerLinkActive="active"
 					class="nav-item"
+					[class.nav-item-active]="hasRoute('contact')"
 				>
 					Contacto
 				</a>
@@ -36,15 +40,18 @@
 					routerLink="about"
 					routerLinkActive="active"
 					class="nav-item"
+					[class.nav-item-active]="hasRoute('about')"
 				>
 					Acerca de
 				</a>
 				<button
 					routerLink="login"
 					routerLinkActive="active"
+					*ngIf="!hasRoute('login')"
 					type="button"
 					class="btn-login"
 				>
+					<!-- *ngIf="router === '/login'" -->
 					Iniciar Sesión
 				</button>
 			</nav>

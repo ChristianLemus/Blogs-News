@@ -6,7 +6,7 @@
    height="657.0383"
    viewBox="0 0 995.74509 657.0383"
    version="1.1"
-   sodipodi:docname="img1.svg"
+   sodipodi:docname="img-main-page.svg"
    inkscape:version="1.1 (c68e22c387, 2021-05-23)"
    inkscape:export-filename="C:\Users\Christian16\Downloads\Marking Apps\home-page.png"
    inkscape:export-xdpi="512"
@@ -26,15 +26,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="0.42615474"
-     inkscape:cx="422.38179"
-     inkscape:cy="383.66346"
+     inkscape:zoom="0.30133691"
+     inkscape:cx="540.92279"
+     inkscape:cy="227.32031"
      inkscape:window-width="1366"
      inkscape:window-height="745"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="b2f46e39-848f-4802-b668-f0d450449910" />
+     inkscape:current-layer="b2f46e39-848f-4802-b668-f0d450449910"
+     inkscape:lockguides="true" />
   <path
      d="m 767.75201,180.87683 h -79.74145 a 11.47812,11.47812 0 0 1 -9.06567,-4.39356 v 0 a 11.62154,11.62154 0 0 1 -2.17652,-9.96777 201.63052,201.63052 0 0 0 -4.9e-4,-93.646998 11.62425,11.62425 0 0 1 2.17676,-9.96729 11.47753,11.47753 0 0 1 9.06592,-4.39355 h 79.74145 a 11.6235,11.6235 0 0 1 11.439,9.75537 337.96108,337.96108 0 0 1 0,102.858398 11.6235,11.6235 0 0 1 -11.439,9.7554 z"
      fill="#e6e6e6"
@@ -50,17 +51,35 @@
      inkscape:export-xdpi="512"
      inkscape:export-ydpi="512" />
   <path
-     d="m 750.35069,108.35838 h -41.845 a 6.00633,6.00633 0 0 1 -5.99977,-5.99977 v -2.34463 a 6.00633,6.00633 0 0 1 5.99977,-5.999768 h 41.845 a 6.00633,6.00633 0 0 1 5.99976,5.999768 v 2.34468 a 6.00632,6.00632 0 0 1 -5.99976,5.99972 z"
-     fill="#e6e6e6"
-     id="path18"
-     style="fill:#e6e6e6;fill-opacity:1"
+     d="M 704.1196,152.04169 V 92.07875 a 1.6400378,2.1773665 0 0 1 1.63812,-2.174824 h 55.69616 a 1.6400415,2.1773714 0 0 1 1.63811,2.174824 v 59.96294 a 1.6400818,2.1774244 0 0 1 -1.63811,2.17483 h -55.69616 a 1.6401145,2.1774679 0 0 1 -1.63812,-2.17483 z"
+     fill="#19b9eb"
+     id="path25-2"
+     style="fill:#e6e6e6;fill-opacity:1;stroke-width:0.419758"
      inkscape:export-filename="C:\Users\Christian16\Downloads\Marking Apps\home-page.png"
      inkscape:export-xdpi="512"
      inkscape:export-ydpi="512" />
   <path
-     d="m 750.35069,137.98416 h -41.845 a 6.00632,6.00632 0 0 1 -5.99977,-5.99976 v -2.34464 a 6.00632,6.00632 0 0 1 5.99977,-5.99976 h 41.845 a 6.00632,6.00632 0 0 1 5.99976,5.99976 v 2.34464 a 6.00632,6.00632 0 0 1 -5.99976,5.99976 z"
-     fill="#e6e6e6"
-     id="path20"
+     d="m 727.2515,139.45876 h 28.4344 a 0.57983916,0.76981291 0 0 0 0.10618,-0.0117 l -13.44819,-30.92561 a 0.94159339,1.2500893 0 0 0 -1.63907,0 l -9.0254,20.75374 -0.43238,0.99307 z"
+     fill="#ffffff"
+     id="path27-2"
+     style="stroke-width:0.419758"
+     inkscape:export-filename="C:\Users\Christian16\Downloads\Marking Apps\home-page.png"
+     inkscape:export-xdpi="512"
+     inkscape:export-ydpi="512" />
+  <polygon
+     points="116.253,179.813 105.286,198.814 131.934,198.814 118.852,179.813 117.911,178.444 117.44,177.76 "
+     opacity="0.2"
+     style="isolation:isolate"
+     id="polygon29-6"
+     transform="matrix(0.36430067,0,0,0.48365715,688.89593,43.30059)"
+     inkscape:export-filename="C:\Users\Christian16\Downloads\Marking Apps\home-page.png"
+     inkscape:export-xdpi="512"
+     inkscape:export-ydpi="512" />
+  <path
+     d="m 711.41943,139.45876 h 24.59341 l -4.76571,-9.19039 -0.34299,-0.66204 -6.21014,-11.9768 a 1.2565933,1.6682932 0 0 0 -1.86527,-0.14799 1.1226253,1.490433 0 0 0 -0.0895,0.14799 z"
+     fill="#ffffff"
+     id="path31-4"
+     style="stroke-width:0.419758"
      inkscape:export-filename="C:\Users\Christian16\Downloads\Marking Apps\home-page.png"
      inkscape:export-xdpi="512"
      inkscape:export-ydpi="512" />
@@ -564,17 +583,6 @@
      id="circle33"
      style="stroke-width:0.353847"
      r="0" />
-  <rect
-     x="393.65427"
-     y="155.84427"
-     width="3.4825299"
-     height="4.2119842"
-     fill="#3f3d56"
-     id="rect35"
-     style="stroke-width:0.271006"
-     inkscape:export-filename="C:\Users\Christian16\Downloads\Marking Apps\home-page.png"
-     inkscape:export-xdpi="512"
-     inkscape:export-ydpi="512" />
   <path
      d="m 392.75578,133.03096 h -30.91494 a 3.3160544,3.5901417 0 0 1 -3.31231,-3.58609 v -6.37528 a 3.3160544,3.5901417 0 0 1 3.31231,-3.58609 h 30.91494 a 3.3160544,3.5901417 0 0 1 3.31232,3.58609 v 6.37528 a 3.3160544,3.5901417 0 0 1 -3.31232,3.58609 z"
      fill="#cccccc"
