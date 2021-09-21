@@ -12,6 +12,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { UserRegisterComponent } from "./components/user-register/user-register.component";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
+import { BlogsNewsComponent } from './components/blogs-news/blogs-news.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
     AboutComponent,
     LoginComponent,
     UserRegisterComponent,
+    BlogsNewsComponent,
   ],
   imports: [
     BrowserModule,

@@ -27,6 +27,8 @@ export class LoginComponent implements OnInit {
     password: ["", [Validators.required, Validators.minLength(6)]],
   });
 
+  errorToLogin: boolean = false;
+
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
@@ -37,12 +39,18 @@ export class LoginComponent implements OnInit {
 
   onLogin({ value, valid }: { value: UserLogin; valid: boolean }) {
     if (valid) {
-      this.authService.login(value).subscribe((res) => {
-        if (res) {
-          console.log("res::", res);
-          this.router.navigate(["/main"]);
+      this.authService.login(value).subscribe(
+        (res) => {
+          if (res) {
+            this.router.navigate(["/main"]);
+          }
+        },
+        (err) => {
+          if (err.includes(400)) {
+            this.errorToLogin = true;
+          }
         }
-      });
+      );
     }
   }
 }

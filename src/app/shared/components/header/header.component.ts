@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
 
   ngAfterContentChecked() {
     this.isSessionActive = this.authService.loggedIn.value;
-    console.log("ïs active::", this.authService.loggedIn.value);
   }
 
   showHideLogout() {
