@@ -7,6 +7,8 @@ import { AboutComponent } from "./components/about/about.component";
 import { LoginComponent } from "./components/login/login.component";
 import { UserRegisterComponent } from "./components/user-register/user-register.component";
 
+import { AuthGuard } from "./shared/guards/auth.guard";
+
 const routes: Routes = [
   {
     path: "login",
@@ -17,7 +19,7 @@ const routes: Routes = [
     path: "user-register",
     component: UserRegisterComponent,
   },
-  { path: "main", component: MainComponent },
+  { path: "main", component: MainComponent, canActivate: [AuthGuard] },
   { path: "contact", component: ContactComponent },
   { path: "about", component: AboutComponent },
   { path: "", redirectTo: "login", pathMatch: "full" },

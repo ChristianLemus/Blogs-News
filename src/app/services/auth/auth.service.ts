@@ -12,13 +12,13 @@ const helper = new JwtHelperService();
   providedIn: "root",
 })
 export class AuthService {
-  private loggedIn = new BehaviorSubject<boolean>(false);
+  public loggedIn = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) {
     this.verifyToken();
   }
 
-  get isLogged(): Observable<boolean> {
+  isLogged(): Observable<boolean> {
     return this.loggedIn.asObservable();
   }
 

@@ -27,9 +27,6 @@
 						hasRoute('login') ||
 						hasRoute('main')
 					"
-					[class.pointer-events-none]="
-						hasRoute('user-register') || hasRoute('login')
-					"
 				>
 					Inicio
 				</a>
@@ -59,6 +56,7 @@
 						<button
 							type="button"
 							(click)="showHideLogout()"
+							*ngIf="authService.isLogged() | async"
 							class="
 								flex
 								items-center
@@ -93,10 +91,13 @@
 							bg-white
 							z-40
 						"
-						[class.hidden]="!status"
 					>
+						<!-- *ngif="authService.isLogged | async" -->
+						<!-- [class.hidden]="!status" -->
 						<div
 							class="py-1 divide-y divide-gray-100"
+							[class.hidden]="!status"
+							*ngIf="authService.isLogged() | async"
 							role="menu"
 							aria-orientation="vertical"
 							aria-labelledby="options-menu"
@@ -132,6 +133,7 @@
 					routerLinkActive="active"
 					type="button"
 					class="btn-login"
+					[class.hidden]="authService.isLogged() | async"
 					[class.hidden]="!hasRoute('login')"
 				>
 					Regístrate
@@ -141,7 +143,8 @@
 					routerLinkActive="active"
 					type="button"
 					class="btn-login"
-					[class.hidden]="!hasRoute('user-register')"
+					[class.hidden]="authService.isLogged() | async"
+					[class.hidden]="hasRoute('login')"
 				>
 					Iniciar Sesión
 				</button>

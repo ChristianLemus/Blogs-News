@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../../../services/auth/auth.service";
+import { tap } from "rxjs/operators";
 
 @Component({
   selector: "app-header",
@@ -10,9 +11,27 @@ import { AuthService } from "../../../services/auth/auth.service";
 export class HeaderComponent implements OnInit {
   status: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(public authService: AuthService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // this.validateUserLogged();
+  }
+
+  // validateUserLogged() {
+  //   const isloggedUser = this.authService.isLogged().pipe(
+  //     tap((res: boolean) => {
+  //       if (!res) {
+  //         console.log(res);
+  //         // this.router.navigate(["/login"]);
+  //         return false;
+  //       } else {
+  //         console.log(res);
+  //         return true;
+  //       }
+  //     })
+  //   );
+  //   console.log("jummm::", isloggedUser);
+  // }
 
   showHideLogout() {
     this.status = !this.status;
