@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
-import { environment } from "../../environments/environment";
+import { environment } from "../../../environments/environment";
 import { HttpClient } from "@angular/common/http";
 import { Observable, throwError, BehaviorSubject } from "rxjs";
 import { catchError, map } from "rxjs/operators";
-import { UserLogin, UserResponse } from "../models/user.interface";
+import { UserLogin, UserResponse } from "../../models/user.interface";
 import { JwtHelperService } from "@auth0/angular-jwt";
 
 const helper = new JwtHelperService();
@@ -34,9 +34,10 @@ export class AuthService {
         catchError((err: any) => this.handlerError(err))
       );
   }
-  logout(): void {
+  logout(): boolean {
     localStorage.removeItem("token");
-    this.loggedIn.next(true);
+    this.loggedIn.next(false);
+    return true;
   }
   private verifyToken(): void {
     const userToken = localStorage.getItem("token") as string;

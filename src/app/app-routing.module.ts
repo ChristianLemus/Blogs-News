@@ -5,12 +5,17 @@ import { MainComponent } from "./components/main/main.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { AboutComponent } from "./components/about/about.component";
 import { LoginComponent } from "./components/login/login.component";
+import { UserRegisterComponent } from "./components/user-register/user-register.component";
 
 const routes: Routes = [
   {
     path: "login",
     component: LoginComponent,
     children: [{ path: "", component: LoginComponent }],
+  },
+  {
+    path: "user-register",
+    component: UserRegisterComponent,
   },
   { path: "main", component: MainComponent },
   { path: "contact", component: ContactComponent },

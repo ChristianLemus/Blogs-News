@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { AuthService } from "../../../services/auth/auth.service";
 
 @Component({
   selector: "app-header",
@@ -7,17 +8,24 @@ import { Router } from "@angular/router";
   styleUrls: ["./header.component.css"],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router) {}
+  status: boolean = false;
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {}
 
-  /**
-   * Check if the router url contains the specified route
-   *
-   * @param {string} route
-   * @returns
-   * @memberof MyComponent
-   */
+  showHideLogout() {
+    this.status = !this.status;
+  }
+
+  onLogout() {
+    const isLogout = this.authService.logout();
+    if (isLogout) {
+      this.router.navigate(["/login"]);
+    }
+  }
+
+  //Check if the router url contains the specified route
   hasRoute(route: string) {
     return this.router.url.includes(route);
   }

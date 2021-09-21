@@ -33,12 +33,12 @@
 						lg:text-lg
 					"
 				>
-					Ingresa a Blogs & News
+					Crea una Cuenta en Blogs & News
 				</div>
 				<div class="mt-8">
 					<form
-						[formGroup]="loginForm"
-						(ngSubmit)="onLogin(loginForm)"
+						[formGroup]="userRegisterForm"
+						(ngSubmit)="onUserRegister(userRegisterForm)"
 					>
 						<div class="flex flex-col mb-2">
 							<div class="flex relative">
@@ -56,6 +56,100 @@
 										text-sm
 									"
 								>
+									<img
+										src="./assets/images/user-name-lastname.svg"
+										class="h-4 w-4"
+									/>
+								</span>
+								<input
+									formControlName="nombre"
+									type="text"
+									class="
+										rounded-r-lg
+										flex-1
+										appearance-none
+										border border-gray-300
+										w-full
+										py-2
+										px-4
+										bg-white
+										text-gray-700
+										placeholder-gray-400
+										shadow-sm
+										text-base
+										focus:outline-none
+										focus:ring-2
+										focus:ring-primary
+										focus:border-transparent
+									"
+									placeholder="Nombre"
+									required
+								/>
+							</div>
+						</div>
+						<div class="flex flex-col mb-2">
+							<div class="flex relative">
+								<span
+									class="
+										rounded-l-md
+										inline-flex
+										items-center
+										px-3
+										border-t
+										bg-white
+										border-l border-b border-gray-300
+										text-gray-500
+										shadow-sm
+										text-sm
+									"
+								>
+									<img
+										src="./assets/images/user-name-lastname.svg"
+										class="h-4 w-4"
+									/>
+								</span>
+								<input
+									formControlName="apellido"
+									type="text"
+									class="
+										rounded-r-lg
+										flex-1
+										appearance-none
+										border border-gray-300
+										w-full
+										py-2
+										px-4
+										bg-white
+										text-gray-700
+										placeholder-gray-400
+										shadow-sm
+										text-base
+										focus:outline-none
+										focus:ring-2
+										focus:ring-primary
+										focus:border-transparent
+									"
+									placeholder="Apellido"
+									required
+								/>
+							</div>
+						</div>
+						<div class="flex flex-col mb-2">
+							<div class="flex relative">
+								<span
+									class="
+										rounded-l-md
+										inline-flex
+										items-center
+										px-3
+										border-t
+										bg-white
+										border-l border-b border-gray-300
+										text-gray-100
+										shadow-sm
+										text-sm
+									"
+								>
 									<svg
 										width="15"
 										height="15"
@@ -69,7 +163,7 @@
 									</svg>
 								</span>
 								<input
-									formControlName="username"
+									formControlName="correo"
 									type="text"
 									class="
 										rounded-r-lg
@@ -105,14 +199,14 @@
 										border-t
 										bg-white
 										border-l border-b border-gray-300
-										text-gray-500
+										text-gray-100
 										shadow-sm
 										text-sm
 									"
 								>
 									<svg
-										width="15"
-										height="15"
+										width="16"
+										height="16"
 										fill="currentColor"
 										viewBox="0 0 1792 1792"
 										xmlns="http://www.w3.org/2000/svg"
@@ -148,21 +242,6 @@
 								/>
 							</div>
 						</div>
-						<div class="flex items-center mb-6 -mt-4">
-							<div class="flex ml-auto">
-								<a
-									href="#"
-									class="
-										inline-flex
-										text-xs text-gray-300
-										sm:text-sm
-										hover:text-black
-									"
-								>
-									¿Olvidaste tu contraseña?
-								</a>
-							</div>
-						</div>
 						<div class="flex w-full">
 							<button
 								type="submit"
@@ -188,14 +267,14 @@
 									disabled:opacity-50
 								"
 							>
-								Iniciar Sesión
+								Registrar Cuenta
 							</button>
 						</div>
 					</form>
 				</div>
 				<div class="flex items-center justify-center mt-6">
 					<a
-						routerLink="/user-register"
+						routerLink="/login"
 						routerLinkActive="active"
 						class="
 							inline-flex
@@ -204,7 +283,7 @@
 							hover:text-black
 						"
 					>
-						<span class="ml-2"> ¿No tienes una cuenta? </span>
+						<span class="ml-2"> ¿Ya tienes una cuenta? </span>
 					</a>
 				</div>
 			</div>

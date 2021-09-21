@@ -23,7 +23,12 @@
 					routerLinkActive="active"
 					class="nav-item"
 					[class.nav-item-active]="
-						hasRoute('login') || hasRoute('main')
+						hasRoute('user-register') ||
+						hasRoute('login') ||
+						hasRoute('main')
+					"
+					[class.pointer-events-none]="
+						hasRoute('user-register') || hasRoute('login')
 					"
 				>
 					Inicio
@@ -37,21 +42,107 @@
 					Contacto
 				</a>
 				<a
-					routerLink="about"
+					routerLink="/about"
 					routerLinkActive="active"
 					class="nav-item"
 					[class.nav-item-active]="hasRoute('about')"
 				>
 					Acerca de
 				</a>
+				<div
+					class="relative inline-block"
+					[class.hidden]="
+						hasRoute('login') || hasRoute('user-register')
+					"
+				>
+					<div>
+						<button
+							type="button"
+							(click)="showHideLogout()"
+							class="
+								flex
+								items-center
+								justify-center
+								w-full
+								rounded-full
+								px-px
+								py-px
+								text-gray-700
+								focus:outline-none
+								focus:ring-2
+								focus:ring-primary
+								hover:opacity-75
+							"
+						>
+							<img
+								src="./assets/images/profile-user.svg"
+								alt="Logo"
+								class="h-10 w-10 m-0"
+							/>
+						</button>
+					</div>
+					<div
+						class="
+							origin-top-right
+							absolute
+							right-0
+							mt-2
+							w-40
+							rounded-md
+							shadow-md
+							bg-white
+							z-40
+						"
+						[class.hidden]="!status"
+					>
+						<div
+							class="py-1 divide-y divide-gray-100"
+							role="menu"
+							aria-orientation="vertical"
+							aria-labelledby="options-menu"
+						>
+							<a
+								(click)="onLogout()"
+								class="
+									flex
+									items-center
+									block
+									cursor-pointer
+									px-4
+									py-2
+									text-sm text-gray-100
+									hover:text-black
+								"
+								role="menuitem"
+							>
+								<img
+									src="./assets/images/logout.svg"
+									alt="Logo"
+									class="h-4 w-4 m-2"
+								/>
+								<span class="flex flex-col">
+									<span> Cerrar Sesión </span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
 				<button
-					routerLink="login"
+					routerLink="/user-register"
 					routerLinkActive="active"
-					*ngIf="!hasRoute('login')"
 					type="button"
 					class="btn-login"
+					[class.hidden]="!hasRoute('login')"
 				>
-					<!-- *ngIf="router === '/login'" -->
+					Regístrate
+				</button>
+				<button
+					routerLink="/login"
+					routerLinkActive="active"
+					type="button"
+					class="btn-login"
+					[class.hidden]="!hasRoute('user-register')"
+				>
 					Iniciar Sesión
 				</button>
 			</nav>
