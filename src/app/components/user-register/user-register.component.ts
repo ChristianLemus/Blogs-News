@@ -22,6 +22,8 @@ export class UserRegisterComponent implements OnInit {
     password: ["", [Validators.required, Validators.minLength(6)]],
   });
 
+  errorToRegister: boolean = false;
+
   constructor(
     private userRegisterService: UserRegisterService,
     private fb: FormBuilder,
@@ -30,20 +32,20 @@ export class UserRegisterComponent implements OnInit {
 
   ngOnInit() {}
 
-  onUserRegister({ value }: { value: UserRegister }) {
-    // console.log("data register user::", value);
-    this.userRegisterService.register(value).subscribe(
-      (res) => {
-        if (res) {
-          console.log("response::", res);
-          this.router.navigate(["/login"]);
+  onUserRegister({ value, valid }: { value: UserRegister; valid: boolean }) {
+    if (valid) {
+      this.userRegisterService.register(value).subscribe(
+        (res) => {
+          if (res) {
+            this.router.navigate(["/login"]);
+          }
+        },
+        (err) => {
+          if (err.includes(400)) {
+            this.errorToRegister = true;
+          }
         }
-      },
-      (err) => {
-        if (err.includes(400)) {
-          console.log("Ya existe un usuario con ese correo electrónico");
-        }
-      }
-    );
+      );
+    }
   }
 }

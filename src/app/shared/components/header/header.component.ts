@@ -1,37 +1,25 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, AfterContentChecked } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../../../services/auth/auth.service";
 import { tap } from "rxjs/operators";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.css"],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterContentChecked {
   status: boolean = false;
-
+  isSessionActive: boolean = false;
   constructor(public authService: AuthService, private router: Router) {}
 
-  ngOnInit() {
-    // this.validateUserLogged();
-  }
+  ngOnInit() {}
 
-  // validateUserLogged() {
-  //   const isloggedUser = this.authService.isLogged().pipe(
-  //     tap((res: boolean) => {
-  //       if (!res) {
-  //         console.log(res);
-  //         // this.router.navigate(["/login"]);
-  //         return false;
-  //       } else {
-  //         console.log(res);
-  //         return true;
-  //       }
-  //     })
-  //   );
-  //   console.log("jummm::", isloggedUser);
-  // }
+  ngAfterContentChecked() {
+    this.isSessionActive = this.authService.loggedIn.value;
+    console.log("ïs active::", this.authService.loggedIn.value);
+  }
 
   showHideLogout() {
     this.status = !this.status;

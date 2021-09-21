@@ -9,7 +9,9 @@ import { ContactComponent } from "./components/contact/contact.component";
 import { AboutComponent } from "./components/about/about.component";
 import { LoginComponent } from "./components/login/login.component";
 import { HttpClientModule } from "@angular/common/http";
-import { UserRegisterComponent } from './components/user-register/user-register.component';
+import { UserRegisterComponent } from "./components/user-register/user-register.component";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { UserRegisterComponent } from './components/user-register/user-register.
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

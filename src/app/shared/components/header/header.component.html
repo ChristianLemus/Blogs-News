@@ -139,11 +139,12 @@
 					Regístrate
 				</button>
 				<button
+					[class.hidden]="hasRoute('login')"
 					routerLink="/login"
 					routerLinkActive="active"
 					type="button"
 					class="btn-login"
-					[class.hidden]="authService.isLogged() | async"
+					*ngIf="!isSessionActive"
 					[class.hidden]="hasRoute('login')"
 				>
 					Iniciar Sesión

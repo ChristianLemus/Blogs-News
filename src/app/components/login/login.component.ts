@@ -16,7 +16,14 @@ import { UserLogin } from "../../models/user.interface";
 })
 export class LoginComponent implements OnInit {
   loginForm = this.fb.group({
-    username: ["", [Validators.required, Validators.email]],
+    username: [
+      "",
+      [
+        Validators.required,
+        Validators.email,
+        Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"),
+      ],
+    ],
     password: ["", [Validators.required, Validators.minLength(6)]],
   });
 
@@ -28,12 +35,14 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-  onLogin({ value }: { value: UserLogin }) {
-    this.authService.login(value).subscribe((res) => {
-      if (res) {
-        console.log("res::", res);
-        this.router.navigate(["/main"]);
-      }
-    });
+  onLogin({ value, valid }: { value: UserLogin; valid: boolean }) {
+    if (valid) {
+      this.authService.login(value).subscribe((res) => {
+        if (res) {
+          console.log("res::", res);
+          this.router.navigate(["/main"]);
+        }
+      });
+    }
   }
 }

@@ -24,6 +24,22 @@
 				"
 			>
 				<div
+					*ngIf="errorToRegister"
+					class="
+						bg-red-200
+						border-red-600
+						text-red-600
+						border-l-4
+						p-4
+						mb-2
+						rounded-md
+					"
+					role="alert"
+				>
+					<p class="text-center font-bold">Upps!!</p>
+					<p class="text-center">Este correo ya está registrado.</p>
+				</div>
+				<div
 					class="
 						self-center
 						mb-6
@@ -244,6 +260,10 @@
 						</div>
 						<div class="flex w-full">
 							<button
+								[disabled]="userRegisterForm.valid === false"
+								[class.pointer-events-none]="
+									userRegisterForm.valid === false
+								"
 								type="submit"
 								class="
 									py-2

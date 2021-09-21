@@ -51,7 +51,7 @@
 										border-t
 										bg-white
 										border-l border-b border-gray-300
-										text-gray-500
+										text-gray-100
 										shadow-sm
 										text-sm
 									"
@@ -105,14 +105,14 @@
 										border-t
 										bg-white
 										border-l border-b border-gray-300
-										text-gray-500
+										text-gray-100
 										shadow-sm
 										text-sm
 									"
 								>
 									<svg
-										width="15"
-										height="15"
+										width="16"
+										height="16"
 										fill="currentColor"
 										viewBox="0 0 1792 1792"
 										xmlns="http://www.w3.org/2000/svg"
@@ -153,6 +153,7 @@
 								<a
 									href="#"
 									class="
+										pointer-events-none
 										inline-flex
 										text-xs text-gray-300
 										sm:text-sm
@@ -165,6 +166,10 @@
 						</div>
 						<div class="flex w-full">
 							<button
+								[disabled]="loginForm.valid === false"
+								[class.pointer-events-none]="
+									loginForm.valid === false
+								"
 								type="submit"
 								class="
 									py-2
