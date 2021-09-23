@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-
 import { MainComponent } from "./components/main/main.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { AboutComponent } from "./components/about/about.component";
@@ -8,6 +7,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { UserRegisterComponent } from "./components/user-register/user-register.component";
 import { BlogsNewsComponent } from "./components/blogs-news/blogs-news.component";
 import { DetailedInfoComponent } from "./components/detailed-info/detailed-info.component";
+import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { AuthGuard } from "./shared/guards/auth.guard";
 
 const routes: Routes = [
@@ -33,6 +33,7 @@ const routes: Routes = [
   { path: "contact", component: ContactComponent },
   { path: "about", component: AboutComponent },
   { path: "", redirectTo: "login", pathMatch: "full" },
+  { path: "**", pathMatch: "full", component: PageNotFoundComponent },
 ];
 
 @NgModule({

@@ -12,12 +12,16 @@ import { Observable } from "rxjs";
 export class HeaderComponent implements OnInit, AfterContentChecked {
   status: boolean = false;
   isSessionActive: boolean = false;
+  userName: string = "";
   constructor(public authService: AuthService, private router: Router) {}
 
   ngOnInit() {}
 
   ngAfterContentChecked() {
     this.isSessionActive = this.authService.loggedIn.value;
+    this.userName = localStorage.getItem("username") as string;
+    // this.userName = this.authService.userName.value;
+    // console.log("username::", this.authService.userName);
   }
 
   showHideLogout() {

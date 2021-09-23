@@ -22,3 +22,10 @@
 .nav-item-active {
     @apply font-medium text-black;
 }
+
+.max-vertical-text-1 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}

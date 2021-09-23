@@ -121,7 +121,41 @@
 									px-4
 									py-2
 									text-sm text-gray-100
-									hover:text-black
+									hover:bg-gray-600 hover:text-black
+								"
+								role="menuitem"
+							>
+								<img
+									src="./assets/images/user.svg"
+									alt="Logo"
+									class="h-4 w-4 m-2"
+								/>
+								<span class="flex flex-col">
+									<span class="max-vertical-text-1">
+										{{ userName }}
+									</span>
+								</span>
+							</a>
+						</div>
+						<div
+							class="py-1 divide-y divide-gray-100"
+							[class.hidden]="!status"
+							*ngIf="authService.isLogged() | async"
+							role="menu"
+							aria-orientation="vertical"
+							aria-labelledby="options-menu"
+						>
+							<a
+								(click)="onLogout()"
+								class="
+									flex
+									items-center
+									block
+									cursor-pointer
+									px-4
+									py-2
+									text-sm text-gray-100
+									hover:bg-gray-600 hover:text-black
 								"
 								role="menuitem"
 							>

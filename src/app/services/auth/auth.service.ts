@@ -13,7 +13,6 @@ const helper = new JwtHelperService();
 })
 export class AuthService {
   public loggedIn = new BehaviorSubject<boolean>(false);
-
   constructor(private http: HttpClient) {
     this.verifyToken();
   }
@@ -28,6 +27,7 @@ export class AuthService {
       .pipe(
         map((res: UserResponse) => {
           this.saveToken(res.token);
+          this.setUsername(res.nameuser);
           this.loggedIn.next(true);
           return res;
         }),
@@ -36,6 +36,7 @@ export class AuthService {
   }
   logout(): boolean {
     localStorage.removeItem("token");
+    localStorage.removeItem("username");
     this.loggedIn.next(false);
     return true;
   }
@@ -46,6 +47,9 @@ export class AuthService {
   }
   private saveToken(token: string): void {
     localStorage.setItem("token", token);
+  }
+  private setUsername(username: string): void {
+    localStorage.setItem("username", username);
   }
   private handlerError(err: any): Observable<any> {
     let errorMessage: string = "An error occurred while obtaining the data";

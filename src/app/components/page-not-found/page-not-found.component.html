@@ -1,1 +1,57 @@
-<p>page-not-found works!</p>
+<div class="bg-white flex relative z-20 items-center">
+	<div class="container mx-auto px-6 block relative py-16 md:block lg:flex">
+		<div
+			class="
+				block
+				ml-0
+				w-3/3
+				md:ml-20
+				lg:w-3/6
+				flex flex-col
+				relative
+				z-20
+			"
+		>
+			<span
+				class="
+					w-full
+					mb-4
+					text-primary text-sm
+					font-medium
+					md:text-md md:mb-6
+				"
+			>
+				¡ERROR 404!</span
+			>
+			<h1
+				class="
+					flex flex-col
+					text-gray-100 text-3xl
+					md:text-5xl
+					mb-4
+					md:mb-6
+				"
+			>
+				Página no encontrada.
+			</h1>
+			<h2 class="text-sm text-gray-100 md:text-lg">
+				Esta página no se encuentra disponible, por favor regrese a la
+				página de inicio.
+			</h2>
+			<button
+				routerLink="/blogs-news"
+				routerLinkActive="active"
+				type="button"
+				class="btn-home"
+			>
+				Regresar
+			</button>
+		</div>
+		<div class="mt-16 block 3/3 lg:w-3/6 relative md:mt-16 lg:mt-auto">
+			<img
+				src="../../../assets/images/page-not-found.svg"
+				class="max-w-sm md:max-w-lg m-auto"
+			/>
+		</div>
+	</div>
+</div>
