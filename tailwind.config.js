@@ -22,6 +22,9 @@ module.exports = {
       fontFamily: {
         sans: ['"Nunito Sans"', "sans-serif"],
       },
+      flex: {
+        4: "4 4 0%",
+      },
     },
   },
   variants: {

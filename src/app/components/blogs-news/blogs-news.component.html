@@ -1,34 +1,77 @@
-<div class="bg-white flex relative z-20 items-center">
-	<div
-		class="
-			container
-			mx-auto
-			px-6
-			flex flex-col
-			justify-between
-			items-center
-			relative
-			py-8
-		"
-	>
-		<div class="flex flex-col mb-24">
-			<h1
-				class="
-					font-light
-					w-full
-					text-center text-4xl
-					sm:text-5xl
-					text-gray-100
-				"
-			>
-				Página en Mantenimiento.
-			</h1>
-		</div>
-		<div class="block w-full mx-auto mt-6 md:mt-0 relative">
-			<img
-				src="../../../assets/images/img-working.svg"
-				class="max-w-xs md:max-w-2xl m-auto"
-			/>
+<div class="w-full bg-white p-12">
+	<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
+		<div
+			*ngFor="let blogNew of blogsNews"
+			class="
+				overflow-hidden
+				shadow-lg
+				rounded-lg
+				h-96
+				w-60
+				md:w-80
+				m-auto
+			"
+		>
+			<div class="w-full block h-full">
+				<div class="bg-white w-full px-10 py-2">
+					<p class="text-lg text-primary text-md font-semibold mb-2">
+						{{ blogNew.tile_categorie }}
+					</p>
+					<p
+						class="
+							text-gray-800 text-xl
+							font-medium
+							mb-2
+							max-vertical-text-1
+						"
+					>
+						{{ blogNew.title }}
+					</p>
+					<div
+						[innerHTML]="blogNew.body"
+						class="
+							text-gray-400
+							font-light
+							text-md
+							max-vertical-text-2
+						"
+					></div>
+					<div class="flex items-end mt-4 justify-end">
+						<a
+							routerLink="/detailed-info/{{ blogNew.id }}"
+							routerLinkActive="active"
+							class="
+								text-gray-300
+								h-5
+								block
+								relative
+								hover:text-black
+							"
+							>Ver más</a
+						>
+					</div>
+					<div class="flex items-end mt-4">
+						<a href="#" class="block relative"
+							><img
+								alt="profil"
+								src="../../../assets/images/profile-user.svg"
+								class="
+									mx-auto
+									object-cover
+									rounded-full
+									h-10
+									w-10
+								"
+						/></a>
+						<div class="flex flex-col justify-between ml-4 text-sm">
+							<p class="text-gray-800">{{ blogNew.author }}</p>
+							<p class="text-gray-400">
+								{{ blogNew.update_date | date: "yyyy-MM-dd" }}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

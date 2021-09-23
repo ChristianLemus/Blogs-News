@@ -1,0 +1,71 @@
+<div *ngFor="let blogNew of blogsNews">
+	<div *ngIf="blogNew.id === idNewBlog">
+		<div class="flex items-center justify-center px-5 py-5 mt-6 mb-6">
+			<div
+				class="
+					w-full
+					mx-auto
+					max-w-4xl
+					rounded-lg
+					bg-white
+					dark:bg-gray-800
+					shadow-lg
+					px-20
+					pt-20
+					pb-10
+					text-gray-800
+					dark:text-gray-50
+				"
+			>
+				<!-- categorie -->
+				<div class="w-full mb-10">
+					<div
+						class="
+							uppercase
+							w-full
+							mb-4
+							text-primary text-3xl
+							font-medium
+						"
+					>
+						{{ blogNew.tile_categorie }}
+					</div>
+				</div>
+				<!-- date -->
+				<div class="w-full font-bold mb-6">
+					Fecha:
+					<span class="font-medium text-gray-100">{{
+						blogNew.update_date | date: "yyyy-MM-dd"
+					}}</span>
+				</div>
+				<div class="w-full font-bold mb-6">
+					Autor:
+					<span class="font-medium text-gray-100">{{
+						blogNew.author
+					}}</span>
+				</div>
+				<!-- title -->
+				<div class="w-full mb-10">
+					<div
+						class="
+							text-center
+							w-full
+							mb-4
+							text-gray-100 text-2xl
+							font-medium
+						"
+					>
+						{{ blogNew.title }}
+					</div>
+				</div>
+				<!-- content -->
+				<div class="w-full mb-10">
+					<div
+						class="font-medium text-gray-100"
+						[innerHTML]="blogNew.body"
+					></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

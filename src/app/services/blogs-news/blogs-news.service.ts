@@ -1,24 +1,28 @@
 import { Injectable } from "@angular/core";
 import { environment } from "../../../environments/environment";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, throwError, BehaviorSubject } from "rxjs";
 import { catchError, map } from "rxjs/operators";
-import { UserRegister } from "../../models/user.interface";
+import { BlogsNewsResponse } from "../../models/user.interface";
 
 @Injectable({
   providedIn: "root",
 })
-export class UserRegisterService {
+export class BlogsNewsService {
   constructor(private http: HttpClient) {}
 
-  register(registerData: UserRegister): Observable<string | void> {
+  getBlogsNews(): Observable<BlogsNewsResponse | void> {
+    const authToken = localStorage.getItem("token") as string;
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`,
+    });
     return this.http
-      .post<string>(
-        `${environment.API_UL}/login/register_user_test`,
-        registerData
-      )
+      .get<BlogsNewsResponse>(`${environment.API_UL}/blogs/LIST_BLOGS`, {
+        headers: headers,
+      })
       .pipe(
-        map((res: string) => {
+        map((res: BlogsNewsResponse) => {
           return res;
         }),
         catchError((err: any) => this.handlerError(err))

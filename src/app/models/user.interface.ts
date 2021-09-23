@@ -18,3 +18,16 @@ export interface UserResponse {
 	change_password_necesary: number;
 	answer: string;
 }
+
+export interface BlogsNewsResponse {
+	id: number;
+	title: string;
+	author: string;
+	body: string;
+	url_portada: string;
+	external_cover: string;
+	id_categories: number;
+	tile_categorie: string;
+	creation_date: string;
+	update_date: string;
+}

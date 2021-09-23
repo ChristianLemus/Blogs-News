@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
 
   onLogout() {
     const isLogout = this.authService.logout();
+    this.status = false;
     if (isLogout) {
       this.router.navigate(["/login"]);
     }

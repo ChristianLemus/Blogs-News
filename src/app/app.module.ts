@@ -12,7 +12,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { UserRegisterComponent } from "./components/user-register/user-register.component";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
-import { BlogsNewsComponent } from './components/blogs-news/blogs-news.component';
+import { BlogsNewsComponent } from "./components/blogs-news/blogs-news.component";
+import { DetailedInfoComponent } from "./components/detailed-info/detailed-info.component";
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { BlogsNewsComponent } from './components/blogs-news/blogs-news.component
     LoginComponent,
     UserRegisterComponent,
     BlogsNewsComponent,
+    DetailedInfoComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

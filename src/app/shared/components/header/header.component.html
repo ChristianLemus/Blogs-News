@@ -25,11 +25,21 @@
 					[class.nav-item-active]="
 						hasRoute('user-register') ||
 						hasRoute('login') ||
-						hasRoute('main') ||
-						hasRoute('blogs-news')
+						hasRoute('main')
 					"
 				>
 					Inicio
+				</a>
+				<a
+					*ngIf="isSessionActive"
+					routerLink="blogs-news"
+					routerLinkActive="active"
+					class="nav-item"
+					[class.nav-item-active]="
+						hasRoute('blogs-news') || hasRoute('detailed-info')
+					"
+				>
+					Blog & News
 				</a>
 				<a
 					routerLink="/contact"
@@ -57,7 +67,7 @@
 						<button
 							type="button"
 							(click)="showHideLogout()"
-							*ngIf="authService.isLogged() | async"
+							*ngIf="isSessionActive"
 							class="
 								flex
 								items-center
@@ -93,8 +103,6 @@
 							z-40
 						"
 					>
-						<!-- *ngif="authService.isLogged | async" -->
-						<!-- [class.hidden]="!status" -->
 						<div
 							class="py-1 divide-y divide-gray-100"
 							[class.hidden]="!status"

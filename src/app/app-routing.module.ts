@@ -7,7 +7,7 @@ import { AboutComponent } from "./components/about/about.component";
 import { LoginComponent } from "./components/login/login.component";
 import { UserRegisterComponent } from "./components/user-register/user-register.component";
 import { BlogsNewsComponent } from "./components/blogs-news/blogs-news.component";
-
+import { DetailedInfoComponent } from "./components/detailed-info/detailed-info.component";
 import { AuthGuard } from "./shared/guards/auth.guard";
 
 const routes: Routes = [
@@ -20,6 +20,11 @@ const routes: Routes = [
     component: UserRegisterComponent,
   },
   { path: "main", component: MainComponent, canActivate: [AuthGuard] },
+  {
+    path: "detailed-info/:id",
+    component: DetailedInfoComponent,
+    canActivate: [AuthGuard],
+  },
   {
     path: "blogs-news",
     component: BlogsNewsComponent,
