@@ -32,7 +32,11 @@ const routes: Routes = [
   },
   { path: "contact", component: ContactComponent },
   { path: "about", component: AboutComponent },
-  { path: "", redirectTo: "login", pathMatch: "full" },
+  {
+    path: "",
+    redirectTo: "login",
+    pathMatch: "full",
+  },
   { path: "**", pathMatch: "full", component: PageNotFoundComponent },
 ];
 
